@@ -1,0 +1,44 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main ()
+{
+	double sales[10];
+	int index, maxIndex, minIndex;
+	double smallestNumber, largestNumber, Total, Average;
+	
+	for (index = 0; index <10; index++)
+		sales[index] = 0.0;
+	
+	for (index = 0; index < 10; index++)
+		cin >> sales[index];
+		
+	for (index = 0; index < 10; index++)
+		cout << sales[index] << " " ;
+	
+	minIndex = 0;
+	for (index = 1; index < 10; index++)
+		if (sales[minIndex] > sales[index])
+			minIndex = index;
+		smallestNumber = sales[minIndex];
+		cout << "\n\nSmallest Number: "	<< smallestNumber << endl;
+		
+	maxIndex = 0;
+	for (index = 1; index < 10; index++)
+		if (sales[maxIndex] < sales[index])
+			maxIndex = index;
+		largestNumber = sales[maxIndex];
+		cout << "Largest Number: "	<< largestNumber << endl;
+		
+	Total = 0;
+	for (index =0; index < 10; index++)
+		Total = Total + sales[index];
+		cout << "Total: " << Total << endl;
+		
+	Average = Total / 10;
+	cout << "Average: " << Average << endl;
+	
+	_getch();
+	return 0;
+}
